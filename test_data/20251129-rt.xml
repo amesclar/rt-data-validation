@@ -1,0 +1,282 @@
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="40" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="50" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="55" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="56" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="57" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="58" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="59" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="60" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="30" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="100" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="110" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="115" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="116" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="117" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="118" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="119" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="120" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="3" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="2" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="90" type="Buzzer" longcount="1" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="120" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="150" type="Buzzer" longcount="0" shortcount="3"/>
+<testcase classname="BuzzerLogic" eventat="160" type="Buzzer" longcount="0" shortcount="2"/>
+<testcase classname="BuzzerLogic" eventat="170" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="175" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="176" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="177" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="178" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="179" type="Buzzer" longcount="0" shortcount="1"/>
+<testcase classname="BuzzerLogic" eventat="180" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="180" type="End"/>
+<testcase classname="StartEvent" eventat="0" type="Start"/>
+<testcase classname="BuzzerLogic" eventat="0" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="60" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="240" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="BuzzerLogic" eventat="300" type="Buzzer" longcount="1" shortcount="0"/>
+<testcase classname="EndEvent" eventat="300" type="End"/>
