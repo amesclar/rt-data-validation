@@ -1,0 +1,61 @@
+[2025-12-19 10:59:50. Regatta Timer Test Framework Ready
+[2025-12-19 10:59:59. <testsuite name="RegattaTimerAutomatedTest">
+[2025-12-19 10:59:59. <testcase classname="AutoCycleStart" iterations="10" type="CycleStart"/>
+[2025-12-19 10:59:59. <testcase classname="TestStart" testsequence="1" iteration="1" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 11:00:59. <testcase classname="TestEnd" testsequence="1" iteration="1" elapsed="60" type="End"/>
+[2025-12-19 11:01:04. <testcase classname="TestStart" testsequence="2" iteration="1" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 11:03:05. <testcase classname="TestEnd" testsequence="2" iteration="1" elapsed="120" type="End"/>
+[2025-12-19 11:03:10. <testcase classname="TestStart" testsequence="3" iteration="1" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 11:48:31. <testcase classname="TestEnd" testsequence="2" iteration="5" elapsed="120" type="End"/>
+[2025-12-19 11:48:36. <testcase classname="TestStart" testsequence="3" iteration="5" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 11:51:36. <testcase classname="TestEnd" testsequence="3" iteration="5" elapsed="180" type="End"/>
+[2025-12-19 11:51:41. <testcase classname="TestStart" testsequence="5" iteration="5" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 11:56:42. <testcase classname="TestEnd" testsequence="5" iteration="5" elapsed="300" type="End"/>
+[2025-12-19 11:56:47. <testcase classname="SequenceComplete" iteration="5"/>
+[2025-12-19 11:56:47. <testcase classname="TestStart" testsequence="1" iteration="6" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 11:57:47. <testcase classname="TestEnd" testsequence="1" iteration="6" elapsed="60" type="End"/>
+[2025-12-19 11:57:52. <testcase classname="TestStart" testsequence="2" iteration="6" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 11:59:53. <testcase classname="TestEnd" testsequence="2" iteration="6" elapsed="120" type="End"/>
+[2025-12-19 11:59:58. <testcase classname="TestStart" testsequence="3" iteration="6" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 12:02:58. <testcase classname="TestEnd" testsequence="3" iteration="6" elapsed="180" type="End"/>
+[2025-12-19 12:03:03. <testcase classname="TestStart" testsequence="5" iteration="6" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 12:08:03. <testcase classname="TestEnd" testsequence="5" iteration="6" elapsed="300" type="End"/>
+[2025-12-19 12:08:08. <testcase classname="SequenceComplete" iteration="6"/>
+[2025-12-19 12:08:08. <testcase classname="TestStart" testsequence="1" iteration="7" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 12:09:09. <testcase classname="TestEnd" testsequence="1" iteration="7" elapsed="60" type="End"/>
+[2025-12-19 12:09:14. <testcase classname="TestStart" testsequence="2" iteration="7" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 12:11:14. <testcase classname="TestEnd" testsequence="2" iteration="7" elapsed="120" type="End"/>
+[2025-12-19 12:11:19. <testcase classname="TestStart" testsequence="3" iteration="7" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 12:14:19. <testcase classname="TestEnd" testsequence="3" iteration="7" elapsed="180" type="End"/>
+[2025-12-19 12:14:25. <testcase classname="TestStart" testsequence="5" iteration="7" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 12:19:25. <testcase classname="TestEnd" testsequence="5" iteration="7" elapsed="300" type="End"/>
+[2025-12-19 12:19:30. <testcase classname="SequenceComplete" iteration="7"/>
+[2025-12-19 12:19:30. <testcase classname="TestStart" testsequence="1" iteration="8" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 12:20:30. <testcase classname="TestEnd" testsequence="1" iteration="8" elapsed="60" type="End"/>
+[2025-12-19 12:20:35. <testcase classname="TestStart" testsequence="2" iteration="8" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 12:22:36. <testcase classname="TestEnd" testsequence="2" iteration="8" elapsed="120" type="End"/>
+[2025-12-19 12:22:41. <testcase classname="TestStart" testsequence="3" iteration="8" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 12:25:41. <testcase classname="TestEnd" testsequence="3" iteration="8" elapsed="180" type="End"/>
+[2025-12-19 12:25:46. <testcase classname="TestStart" testsequence="5" iteration="8" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 12:30:47. <testcase classname="TestEnd" testsequence="5" iteration="8" elapsed="300" type="End"/>
+[2025-12-19 12:30:51. <testcase classname="SequenceComplete" iteration="8"/>
+[2025-12-19 12:30:52. <testcase classname="TestStart" testsequence="1" iteration="9" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 12:31:52. <testcase classname="TestEnd" testsequence="1" iteration="9" elapsed="60" type="End"/>
+[2025-12-19 12:31:57. <testcase classname="TestStart" testsequence="2" iteration="9" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 12:33:57. <testcase classname="TestEnd" testsequence="2" iteration="9" elapsed="120" type="End"/>
+[2025-12-19 12:34:02. <testcase classname="TestStart" testsequence="3" iteration="9" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 12:37:03. <testcase classname="TestEnd" testsequence="3" iteration="9" elapsed="180" type="End"/>
+[2025-12-19 12:37:08. <testcase classname="TestStart" testsequence="5" iteration="9" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 12:42:08. <testcase classname="TestEnd" testsequence="5" iteration="9" elapsed="300" type="End"/>
+[2025-12-19 12:42:13. <testcase classname="SequenceComplete" iteration="9"/>
+[2025-12-19 12:42:13. <testcase classname="TestStart" testsequence="1" iteration="10" elapsed="0" type="Start" duration="60"/>
+[2025-12-19 12:43:13. <testcase classname="TestEnd" testsequence="1" iteration="10" elapsed="60" type="End"/>
+[2025-12-19 12:43:19. <testcase classname="TestStart" testsequence="2" iteration="10" elapsed="0" type="Start" duration="120"/>
+[2025-12-19 12:45:19. <testcase classname="TestEnd" testsequence="2" iteration="10" elapsed="120" type="End"/>
+[2025-12-19 12:45:24. <testcase classname="TestStart" testsequence="3" iteration="10" elapsed="0" type="Start" duration="180"/>
+[2025-12-19 12:48:24. <testcase classname="TestEnd" testsequence="3" iteration="10" elapsed="180" type="End"/>
+[2025-12-19 12:48:29. <testcase classname="TestStart" testsequence="5" iteration="10" elapsed="0" type="Start" duration="300"/>
+[2025-12-19 12:53:30. <testcase classname="TestEnd" testsequence="5" iteration="10" elapsed="300" type="End"/>
+[2025-12-19 12:53:35. <testcase classname="SequenceComplete" iteration="10"/>
+[2025-12-19 12:53:35. <testcase classname="AutoCycleEnd" type="CycleEnd"/>
+[2025-12-19 12:53:35. </testsuite>
