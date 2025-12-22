@@ -21,7 +21,7 @@
 ## Run
 
 ```bash
-python3 rt-data-validation.py --sut-log test_data/SUT-2025-12-19_10-59-49.log --test-log test_data/TEST-2025-12-19_10-59-49.log
+python3 rt-data-validation.py --sut-log test_data/SUT-2025-12-19_10:59:49.log --test-log test_data/TEST-2025-12-19_10:59:49.log
 ```
 
 ## Python
