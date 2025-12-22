@@ -33,6 +33,8 @@ The log entries will be JUNIT XML formatted with each line prefixed with the tim
 
 Log file names should be accepted as a command line arguments.
 
+The validation should also include a visualization for Buzzer Drift (also known as jitter) to determine if the SUT is running at the correct speed. Jitter is the difference between the actual timestamp in the log and the expected time based on the StartEvent. 
+
 ## TEST - log examples
 
 ```

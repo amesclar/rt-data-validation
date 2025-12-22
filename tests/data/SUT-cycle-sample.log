@@ -1,0 +1,8 @@
+[2025-12-22 09:00:01. <testcase classname="StartEvent" whichtest="1min" elapsed="0"/>
+[2025-12-22 09:00:01. <testcase classname="BuzzerEvent" whichtest="1min" elapsed="0" longcount="1" shortcount="0"/>
+[2025-12-22 09:01:01. <testcase classname="BuzzerEvent" whichtest="1min" elapsed="60" longcount="1" shortcount="0"/>
+[2025-12-22 09:01:01. <testcase classname="EndEvent" whichtest="1min" elapsed="60"/>
+[2025-12-22 09:02:00. <testcase classname="StartEvent" whichtest="2min" elapsed="0"/>
+[2025-12-22 09:02:00. <testcase classname="BuzzerEvent" whichtest="2min" elapsed="0" longcount="2" shortcount="0"/>
+[2025-12-22 09:04:00. <testcase classname="BuzzerEvent" whichtest="2min" elapsed="120" longcount="1" shortcount="0"/>
+[2025-12-22 09:04:00. <testcase classname="EndEvent" whichtest="2min" elapsed="120"/>

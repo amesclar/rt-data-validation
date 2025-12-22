@@ -2,6 +2,7 @@
 	- [Run](#run)
 	- [Python](#python)
 		- [Activate Virtual Environment](#activate-virtual-environment)
+		- [Run Tests](#run-tests)
 		- [Install Dependencies](#install-dependencies)
 		- [Capture Dependencies](#capture-dependencies)
 		- [Deactivate Virtual Environment](#deactivate-virtual-environment)
@@ -31,6 +32,11 @@ python3 rt-data-validation.py --sut-log test_data/SUT-2025-12-19_10-59-49.log --
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+### Run Tests
+```
+pytest test_validation.py
 ```
 
 ### Install Dependencies
