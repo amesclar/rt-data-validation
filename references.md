@@ -21,7 +21,7 @@
 ## Run
 
 ```bash
-python3 rt-data-validation.py --sut-log test_data/SUT-2025-12-19_10:59:49.log --test-log test_data/TEST-2025-12-19_10:59:49.log
+python3 rt-data-validation.py --sut test_data/SUT-2025-12-19_10:59:49.log --test test_data/TEST-2025-12-19_10:59:49.log
 ```
 
 ## Python
@@ -29,9 +29,7 @@ python3 rt-data-validation.py --sut-log test_data/SUT-2025-12-19_10:59:49.log --
 ### Activate Virtual Environment
 
 ```bash
-python3 -m venv venv
 source venv/bin/activate
-pip install -r requirements.txt
 ```
 
 ### Run Tests
@@ -61,6 +59,8 @@ deactivate
 
 ```bash
 python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ### Install venv

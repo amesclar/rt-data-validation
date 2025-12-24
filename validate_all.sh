@@ -20,7 +20,7 @@ for test_log in "$LOG_DIR"/TEST-*.log; do
 
     if [[ -f "$sut_log" ]]; then
         echo "Processing: $timestamp"
-        python3 "$VALIDATOR_SCRIPT" --test-log "$test_log" --sut-log "$sut_log"
+        python3 "$VALIDATOR_SCRIPT" --test "$test_log" --sut "$sut_log"
         
         if [ $? -eq 0 ]; then
             echo "RESULT: [ PASS ]"

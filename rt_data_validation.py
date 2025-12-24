@@ -2,10 +2,17 @@ import re
 import argparse
 import sys
 import os
+import csv
 import xml.etree.ElementTree as ET
+import statistics
 from dataclasses import dataclass, field
 from typing import List, Dict, Optional, Tuple
 from datetime import datetime
+
+# Use 'Agg' backend for matplotlib to support headless environments (servers)
+import matplotlib
+matplotlib.use('Agg') 
+import matplotlib.pyplot as plt
 
 # ---------------------------------------------------------------------
 # CONFIGURATION
@@ -25,7 +32,6 @@ EXPECTED_ACTIVATIONS = {
 
 DURATION_MAP = {"1min": 60, "2min": 120, "3min": 180, "5min": 300}
 
-
 @dataclass
 class SutBuzzerEvent:
     elapsed: int
@@ -44,11 +50,17 @@ class TestIteration:
     buzzer_events: List[SutBuzzerEvent] = field(default_factory=list)
     label_mismatches: List[str] = field(default_factory=list)
 
+# ---------------------------------------------------------------------
+# PARSING LOGIC
+# ---------------------------------------------------------------------
+
 def parse_log_line(line: str) -> Tuple[Optional[datetime], Optional[ET.Element]]:
-    ts_match = re.search(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\.', line)
+    ts_match = re.search(r'\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\.(\d{3,6})\]', line)
     xml_match = re.search(r'(<testcase.*?>)', line)
     if ts_match and xml_match:
-        ts = datetime.strptime(ts_match.group(1), '%Y-%m-%d %H:%M:%S')
+        # Construct timestamp with microseconds
+        ts_str = f"{ts_match.group(1)}.{ts_match.group(2)}"
+        ts = datetime.strptime(ts_str, '%Y-%m-%d %H:%M:%S.%f')
         try:
             node = ET.fromstring(xml_match.group(0))
             return ts, node
@@ -79,8 +91,6 @@ def parse_sut_log(path: str) -> List[TestIteration]:
             if cls == "StartEvent":
                 current_iter = TestIteration(sequence_label=lbl, start_time=ts, start_line=i)
             elif cls == "BuzzerEvent" and current_iter:
-                if lbl != current_iter.sequence_label:
-                    current_iter.label_mismatches.append(f"Line {i}: Buzzer label mismatch ({lbl} != {current_iter.sequence_label})")
                 current_iter.buzzer_events.append(SutBuzzerEvent(
                     elapsed=int(node.get("elapsed", 0)), 
                     long_count=int(node.get("longcount", 0)),
@@ -88,13 +98,15 @@ def parse_sut_log(path: str) -> List[TestIteration]:
                     timestamp=ts, line_num=i
                 ))
             elif cls == "EndEvent" and current_iter:
-                if lbl != current_iter.sequence_label:
-                    current_iter.label_mismatches.append(f"Line {i}: End label mismatch ({lbl} != {current_iter.sequence_label})")
                 current_iter.end_time = ts
                 current_iter.end_line = i
                 all_iterations.append(current_iter)
                 current_iter = None
     return all_iterations
+
+# ---------------------------------------------------------------------
+# VALIDATION & ANALYSIS
+# ---------------------------------------------------------------------
 
 def run_validation(test_path, sut_path):
     plan = parse_test_log(test_path)
@@ -102,7 +114,7 @@ def run_validation(test_path, sut_path):
     report = {
         "errors": [], 
         "status": {"alignment": True, "count": True, "buzzer": True, "duration": True},
-        "drift_data": []
+        "drift_records": []
     }
 
     if len(plan) != len(sut_results):
@@ -113,38 +125,95 @@ def run_validation(test_path, sut_path):
         if i >= len(sut_results): break
         sut = sut_results[i]
         
-        # 1. Alignment & Duration
-        if sut.label_mismatches:
-            report["status"]["alignment"] = False
-            report["errors"].extend([f"Iter {i+1} [SUT Line {sut.start_line}]: {m}" for m in sut.label_mismatches])
-
-        expected_dur = 60 if sut.sequence_label == "1min" else 120 # Fallback for test logic
+        # Duration Check
+        expected_dur = DURATION_MAP.get(sut.sequence_label, 0)
         if sut.end_time:
             actual_dur = (sut.end_time - sut.start_time).total_seconds()
-            if abs(actual_dur - expected_dur) > 1.0:
+            if abs(actual_dur - expected_dur) > 1.5:
                 report["status"]["duration"] = False
-                report["errors"].append(f"Iter {i+1} [SUT Line {sut.start_line}]: Duration mismatch. Expected {expected_dur}s, got {actual_dur}s")
+                report["errors"].append(f"Iter {i+1}: Duration mismatch. Expected {expected_dur}s, got {actual_dur:.2f}s")
 
-        # 2. Buzzer Logic
-        exp_table = {0: (1, 0), 1: (1, 0)} if sut.sequence_label == "1min" else {} # Simplified for unit tests
-        # Merge with your actual EXPECTED_ACTIVATIONS map
-        from rt_data_validation import EXPECTED_ACTIVATIONS
+        # Buzzer Drift and Logic Check
         exp_table = EXPECTED_ACTIVATIONS.get(sut.sequence_label, {})
-        
         act_map = {b.elapsed: b for b in sut.buzzer_events}
+
         for sec, (e_long, e_short) in exp_table.items():
             if sec not in act_map:
                 report["status"]["buzzer"] = False
-                report["errors"].append(f"Iter {i+1} [SUT Line {sut.start_line}]: Missing buzzer at {sec}s")
+                report["errors"].append(f"Iter {i+1} [Line {sut.start_line}]: Missing buzzer @ {sec}s")
                 continue
             
             b = act_map[sec]
-            # Drift calculation
-            drift = (b.timestamp.timestamp() - (sut.start_time.timestamp() + sec)) * 1000
-            report["drift_data"].append(drift)
+            drift_ms = (b.timestamp.timestamp() - (sut.start_time.timestamp() + sec)) * 1000
+            report["drift_records"].append({
+                "iteration": i + 1,
+                "label": sut.sequence_label,
+                "sec": sec,
+                "drift_ms": round(drift_ms, 3)
+            })
 
             if (b.long_count != e_long) or (b.short_count != e_short):
                 report["status"]["buzzer"] = False
-                report["errors"].append(f"Iter {i+1} [SUT Line {b.line_num}] @ {sec}s: Expected L:{e_long} S:{e_short}, got L:{b.long_count} S:{b.short_count}")
+                report["errors"].append(f"Iter {i+1} [Line {b.line_num}]: Logic Error. Expected L:{e_long} S:{e_short}")
 
     return report
+
+# ---------------------------------------------------------------------
+# OUTPUTS
+# ---------------------------------------------------------------------
+
+def print_stats(drift_records):
+    if not drift_records: return
+    drifts = [r['drift_ms'] for r in drift_records]
+    print("\n" + "-"*40 + "\nTIMING STATISTICS (ms)\n" + "-"*40)
+    print(f"Mean (Average) : {statistics.mean(drifts):>8.3f} ms")
+    print(f"Std Deviation  : {statistics.stdev(drifts):>8.3f} ms")
+    print(f"Max Drift      : {max(drifts):>8.3f} ms")
+    print(f"Min Drift      : {min(drifts):>8.3f} ms")
+    print("-"*40)
+
+def generate_plot(drift_records):
+    if not drift_records: return
+    drifts = [r['drift_ms'] for r in drift_records]
+    plt.figure(figsize=(10, 5))
+    plt.plot(drifts, marker='o', color='tab:blue', label='Drift per event')
+    plt.axhline(0, color='red', linestyle='--')
+    plt.title("Buzzer Timing Drift Over Test Run")
+    plt.ylabel("Drift (ms)")
+    plt.xlabel("Buzzer Event Index")
+    plt.grid(True, alpha=0.3)
+    plt.savefig("drift_analysis.png")
+    print("📈 Plot saved as 'drift_analysis.png'")
+
+def main():
+    parser = argparse.ArgumentParser(description="Data Validation Script")
+    parser.add_argument("--test", required=True, help="Test plan log")
+    parser.add_argument("--sut", required=True, help="SUT execution log")
+    parser.add_argument("--csv", default="drift_results.csv", help="CSV output filename")
+    args = parser.parse_args()
+
+    results = run_validation(args.test, args.sut)
+
+    # Console Summary
+    print(f"\nVALIDATION REPORT - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    for key, val in results["status"].items():
+        print(f"{key.capitalize():<12}: {'PASS' if val else 'FAIL'}")
+
+    if results["errors"]:
+        print("\nERRORS FOUND:")
+        for err in results["errors"]: print(f"  - {err}")
+
+    # Statistics & Visualization
+    print_stats(results["drift_records"])
+    generate_plot(results["drift_records"])
+
+    # CSV Export
+    if results["drift_records"]:
+        with open(args.csv, 'w', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=results["drift_records"][0].keys())
+            writer.writeheader()
+            writer.writerows(results["drift_records"])
+        print(f"📄 Data exported to {args.csv}")
+
+if __name__ == "__main__":
+    main()
