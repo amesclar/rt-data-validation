@@ -21,7 +21,9 @@
 ## Run
 
 ```bash
-python3 rt-data-validation.py --sut test_data/SUT-2025-12-19_10:59:49.log --test test_data/TEST-2025-12-19_10:59:49.log
+source venv/bin/activate
+python3 rt_data_validation.py --sut test_data/SUT-2026-03-25_06:43:55.log --test test_data/TEST-2026-03-25_06:43:55.log
+# python3 rt_data_validation.py --sut test_data/SUT-2025-12-19_10:59:49.log --test test_data/TEST-2025-12-19_10:59:49.log
 ```
 
 ## Python

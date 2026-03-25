@@ -75,7 +75,13 @@ def parse_test_log(path: str):
             _, node = parse_log_line(line)
             if node is not None and node.get("classname") == "TestStart":
                 seq = node.get("testsequence")
-                plan.append({"label": f"{seq}min", "line": i})
+                iteration = node.get("iteration", "?")
+                plan.append({
+                    "label": f"{seq}min", 
+                    "line": i, 
+                    "iteration": iteration,
+                    "testsequence": seq
+                })
     return plan
 
 def parse_sut_log(path: str) -> List[TestIteration]:
@@ -127,11 +133,13 @@ def run_validation(test_path, sut_path):
         
         # Duration Check
         expected_dur = DURATION_MAP.get(sut.sequence_label, 0)
+        iter_label = f"Iter {p_item['iteration']} [{sut.sequence_label}]"
+        
         if sut.end_time:
             actual_dur = (sut.end_time - sut.start_time).total_seconds()
             if abs(actual_dur - expected_dur) > 1.5:
                 report["status"]["duration"] = False
-                report["errors"].append(f"Iter {i+1}: Duration mismatch. Expected {expected_dur}s, got {actual_dur:.2f}s")
+                report["errors"].append(f"{iter_label}: Duration mismatch. Expected {expected_dur}s, got {actual_dur:.2f}s")
 
         # Buzzer Drift and Logic Check
         exp_table = EXPECTED_ACTIVATIONS.get(sut.sequence_label, {})
@@ -140,13 +148,13 @@ def run_validation(test_path, sut_path):
         for sec, (e_long, e_short) in exp_table.items():
             if sec not in act_map:
                 report["status"]["buzzer"] = False
-                report["errors"].append(f"Iter {i+1} [Line {sut.start_line}]: Missing buzzer @ {sec}s")
+                report["errors"].append(f"{iter_label} [Line {sut.start_line}]: Missing buzzer @ {sec}s")
                 continue
             
             b = act_map[sec]
             drift_ms = (b.timestamp.timestamp() - (sut.start_time.timestamp() + sec)) * 1000
             report["drift_records"].append({
-                "iteration": i + 1,
+                "iteration": p_item['iteration'],
                 "label": sut.sequence_label,
                 "sec": sec,
                 "drift_ms": round(drift_ms, 3)
@@ -154,7 +162,7 @@ def run_validation(test_path, sut_path):
 
             if (b.long_count != e_long) or (b.short_count != e_short):
                 report["status"]["buzzer"] = False
-                report["errors"].append(f"Iter {i+1} [Line {b.line_num}]: Logic Error. Expected L:{e_long} S:{e_short}")
+                report["errors"].append(f"{iter_label} [Line {b.line_num}]: Logic Error. Expected L:{e_long} S:{e_short}")
 
     return report
 
