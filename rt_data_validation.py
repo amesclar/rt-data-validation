@@ -95,6 +95,8 @@ def parse_sut_log(path: str) -> List[TestIteration]:
             cls, lbl = node.get("classname"), node.get("whichtest")
             
             if cls == "StartEvent":
+                if current_iter:
+                    all_iterations.append(current_iter)
                 current_iter = TestIteration(sequence_label=lbl, start_time=ts, start_line=i)
             elif cls == "BuzzerEvent" and current_iter:
                 current_iter.buzzer_events.append(SutBuzzerEvent(
@@ -106,8 +108,10 @@ def parse_sut_log(path: str) -> List[TestIteration]:
             elif cls == "EndEvent" and current_iter:
                 current_iter.end_time = ts
                 current_iter.end_line = i
-                all_iterations.append(current_iter)
-                current_iter = None
+        
+        if current_iter:
+            all_iterations.append(current_iter)
+            
     return all_iterations
 
 # ---------------------------------------------------------------------
@@ -137,7 +141,7 @@ def run_validation(test_path, sut_path):
         
         if sut.end_time:
             actual_dur = (sut.end_time - sut.start_time).total_seconds()
-            if abs(actual_dur - expected_dur) > 1.5:
+            if abs(actual_dur - expected_dur) > 0.25:
                 report["status"]["duration"] = False
                 report["errors"].append(f"{iter_label}: Duration mismatch. Expected {expected_dur}s, got {actual_dur:.2f}s")
 

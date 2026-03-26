@@ -10,12 +10,4 @@ The validation script was enhanced to provide clearer feedback and match system-
 3. **Draft Statistics**: Improved iteration tracking in the internal `drift_records`.
 
 ### Verification Results
-Verified with existing logs:
-```text
-VALIDATION REPORT
-Duration    : FAIL
-ERRORS FOUND:
-  - Iter 1 [5min]: Duration mismatch...
-  - Iter 2 [5min]: Duration mismatch...
-```
-The script now precisely identifies which loop iteration of the test sequence failed.
+Verified with existing logs. The duration tolerance has been tightened to **250ms** (0.25s). Existing logs with 1.1s drift now correctly report as **FAIL**, confirming the threshold is active for future calibrated runs.
