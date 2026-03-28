@@ -22,7 +22,7 @@
 
 ```bash
 source venv/bin/activate
-python3 rt_data_validation.py --sut test_data/SUT-2026-03-25_13:11:20.log --test test_data/TEST-2026-03-25_13:11:20.log
+python3 rt_data_validation.py --sut test_data/SUT-2026-03-25_09:54:06.log --test test_data/TEST-2026-03-25_09:54:06.log
 # python3 rt_data_validation.py --sut test_data/SUT-2025-12-19_10:59:49.log --test test_data/TEST-2025-12-19_10:59:49.log
 ```
 

@@ -170,6 +170,30 @@ def run_validation(test_path, sut_path):
 
     return report
 
+def discover_log_pairs(log_dir: str) -> List[Tuple[str, str, str]]:
+    """
+    Finds pairs of TEST-*.log and SUT-*.log files in the given directory.
+    Returns a list of (timestamp, test_path, sut_path).
+    """
+    pairs = []
+    if not os.path.exists(log_dir):
+        return pairs
+    
+    # regex to match TEST-<timestamp>.log
+    test_pattern = re.compile(r'TEST-(.*)\.log')
+    
+    for filename in sorted(os.listdir(log_dir)):
+        match = test_pattern.match(filename)
+        if match:
+            ts = match.group(1)
+            test_path = os.path.join(log_dir, filename)
+            sut_filename = f"SUT-{ts}.log"
+            sut_path = os.path.join(log_dir, sut_filename)
+            if os.path.exists(sut_path):
+                pairs.append((ts, test_path, sut_path))
+    
+    return pairs
+
 # ---------------------------------------------------------------------
 # OUTPUTS
 # ---------------------------------------------------------------------
@@ -199,33 +223,71 @@ def generate_plot(drift_records):
 
 def main():
     parser = argparse.ArgumentParser(description="Data Validation Script")
-    parser.add_argument("--test", required=True, help="Test plan log")
-    parser.add_argument("--sut", required=True, help="SUT execution log")
+    parser.add_argument("--test", help="Test plan log")
+    parser.add_argument("--sut", help="SUT execution log")
+    parser.add_argument("--dir", default="logs", help="Directory containing log files (default: logs)")
     parser.add_argument("--csv", default="drift_results.csv", help="CSV output filename")
     args = parser.parse_args()
 
-    results = run_validation(args.test, args.sut)
+    log_pairs = []
+    if args.test and args.sut:
+        log_pairs.append(("custom", args.test, args.sut))
+    else:
+        log_pairs = discover_log_pairs(args.dir)
 
-    # Console Summary
-    print(f"\nVALIDATION REPORT - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    for key, val in results["status"].items():
-        print(f"{key.capitalize():<12}: {'PASS' if val else 'FAIL'}")
+    if not log_pairs:
+        print(f"No log pairs found in '{args.dir}'.")
+        if not (args.test and args.sut):
+            print("Please provide --test and --sut or a valid --dir.")
+        sys.exit(1)
 
-    if results["errors"]:
-        print("\nERRORS FOUND:")
-        for err in results["errors"]: print(f"  - {err}")
+    all_drift_records = []
+    
+    for ts, test_path, sut_path in log_pairs:
+        results = run_validation(test_path, sut_path)
+        
+        # Console Summary
+        print(f"\n{'='*60}")
+        print(f"VALIDATION REPORT: {ts}")
+        print(f"Test Log: {os.path.basename(test_path)}")
+        print(f"SUT Log : {os.path.basename(sut_path)}")
+        print(f"{'-'*60}")
+        
+        for key, val in results["status"].items():
+            print(f"{key.capitalize():<12}: {'PASS' if val else 'FAIL'}")
 
-    # Statistics & Visualization
-    print_stats(results["drift_records"])
-    generate_plot(results["drift_records"])
+        if results["errors"]:
+            print("\nERRORS FOUND:")
+            for err in results["errors"]: print(f"  - {err}")
 
-    # CSV Export
-    if results["drift_records"]:
+        # Statistics for this run
+        print_stats(results["drift_records"])
+        
+        # Tag drift records with their timestamp run for consolidated CSV
+        for record in results["drift_records"]:
+            record['run'] = ts
+        all_drift_records.extend(results["drift_records"])
+
+    # Summary Stats for ALL runs if there's more than one
+    if len(log_pairs) > 1:
+        print(f"\n{'='*60}")
+        print(f"OVERALL CONSOLIDATED STATISTICS ({len(log_pairs)} runs)")
+        print(f"{'='*60}")
+        print_stats(all_drift_records)
+
+    # Final Visualization for all runs
+    if all_drift_records:
+        generate_plot(all_drift_records)
+
+    # CSV Export for all runs
+    if all_drift_records:
         with open(args.csv, 'w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=results["drift_records"][0].keys())
+            # Re-order fieldnames to put 'run' first if desired
+            fieldnames = ['run'] + [k for k in all_drift_records[0].keys() if k != 'run']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(results["drift_records"])
-        print(f"📄 Data exported to {args.csv}")
+            writer.writerows(all_drift_records)
+        print(f"\n📄 Consolidated results exported to {args.csv}")
 
 if __name__ == "__main__":
     main()
